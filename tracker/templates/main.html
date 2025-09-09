@@ -7,6 +7,7 @@
       name="viewport"
       content="width=device-width, initial-scale=1, shrink-to-fit=no"
     />
+    
     <link rel="stylesheet" href="/media/css/blog.css">
     <!-- Bootstrap CSS -->
     <link
@@ -19,10 +20,30 @@
     <title>Expense Tracker</title>
     <link rel="stylesheet" href="blog.css">
   </head>
+<style>
+ .navbar {
+      background-color: #2c3e50 !important;
+      box-shadow: 0 2px 5px rgba(0, 0, 0, 0.2);
+}
+.container.marketing .border {
+    border-color: #1abc9c !important;
+    background-color: #eafaf9;
+    box-shadow: 0 1px 5px rgba(26, 188, 156, 0.3);
+    transition: transform 0.3s ease;
+}
+
+.container.marketing .border:hover {
+    transform: translateY(-5px);
+    box-shadow: 0 4px 15px rgba(26, 188, 156, 0.5);
+}
+
+
+
+  </style>
 <body>
     {% load static %}
     <nav class="navbar sticky-top navbar-expand-lg navbar-dark bg-dark">
-      <a class="navbar-brand" href="#">Expense Tracker</a>
+      <a class="navbar-brand" href="main.html">Expense Tracker</a>
       <button
         class="navbar-toggler"
         type="button"
@@ -62,7 +83,7 @@
           "Know where every rupee goes. Manage your budget with ease."
         </p>
         <p>
-          <a href={% url 'login' %} class="btn btn-primary my-2"> <i class="fa-solid fa-arrow-right"></i>Start Tracking Now</a>
+          <a href="{% url "index" %}" class="btn btn-primary my-2"> <i class="fa-solid fa-arrow-right"></i>Start Tracking Now</a>
         </p>
       </div>
     </section>
