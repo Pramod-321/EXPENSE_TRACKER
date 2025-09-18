@@ -59,17 +59,15 @@
       <div class="collapse navbar-collapse" id="navbarSupportedContent">
         <ul class="navbar-nav mr-auto"></ul>
         </ul>
-        <form
-          class="form-inline my-2 my-lg-0"
-          style="margin-right: 50px; display: flex; gap: 18px"
-        >
-          <button class="btn btn-outline-success my-2 my-sm-0" type="submit">
-            Login
-          </button>
-          <button class="btn btn-outline-success my-2 my-sm-0" type="submit">
-            Sign up
-          </button>
-        </form>
+      
+      <form action="{% url 'login_view' %}" method="get" class="d-inline"style="margin-right: 30px; display: flex; gap: 11px">
+        <button class="btn btn-outline-success my-2 my-sm-0" type="submit">Login</button>
+      </form>
+
+      <form action="{% url 'register_view' %}" method="get" class="d-inline">
+        <button class="btn btn-outline-success my-2 my-sm-0" type="submit">Sign up</button>
+      </form>
+
       </div>
     </nav>
 
@@ -83,7 +81,7 @@
           "Know where every rupee goes. Manage your budget with ease."
         </p>
         <p>
-          <a href="{% url "index" %}" class="btn btn-primary my-2"> <i class="fa-solid fa-arrow-right"></i>Start Tracking Now</a>
+          <a href="{% url "register_view" %}" class="btn btn-primary my-2"> <i class="fa-solid fa-arrow-right"></i>Start Tracking Now</a>
         </p>
       </div>
     </section>
@@ -145,6 +143,13 @@
     <a href="#" class="btn btn-primary " width="80" height="80">Track Now</a>
   </div>
 </div>
+ {% if messages %}
+    <script>
+      {% for message in messages %}
+      alert('{{message}}')
+      {% endfor %}
+    </script>
+    {% endif %}
     <!-- Optional JavaScript -->
     <!-- jQuery first, then Popper.js, then Bootstrap JS -->
     <script
